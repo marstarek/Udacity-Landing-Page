@@ -1,43 +1,3 @@
-/**
- * 
- * Manipulating the DOM exercise.
- * Exercise programmatically builds navigation,
- * scrolls to anchors from navigation,
- * and highlights section in viewport upon scrolling.
- 
- * Dependencies: None
- * 
- * JS Version: ES2015/ES6
- * 
- * JS Standard: ESlint
- * 
- */
-
-/**
- * Comments should be present at the beginning of each procedure and class.
- * Great to have comments before crucial code sections within the procedure.
- */
-
-/**
- * Define Global Variables
- * 
- */
-
-
-/**
- * End Global Variables
- * Start Helper Functions
- * 
- */
-
-
-
-/**
- * End Helper Functions
- * Begin Main Functions
- * 
- */
-
 // build the nav
 let navUl = document.getElementById('navbar__list');
 // get all sections 
@@ -52,7 +12,8 @@ const createNavLi = () => {
         navUl.appendChild(li);
     });
 }
-createNavLi()
+createNavLi();
+// add clicked class to navbar items 
 let navbar = document.querySelectorAll('a');
 navbar.forEach((item) => {
     item.addEventListener('click', function(e) {
@@ -63,17 +24,31 @@ navbar.forEach((item) => {
     });
 });
 navUl.addEventListener("click", (e) => {
-    e.preventDefault()
-    if (e.target.dataset.navbar) {
-        document.getElementById(`${e.target.dataset.navbar}`)
-            .scrollIntoView({ behavior: 'smooth' });
-    }
-})
+        e.preventDefault()
+        if (e.target.dataset.navbar) {
+            document.getElementById(`${e.target.dataset.navbar}`)
+                .scrollIntoView({ behavior: 'smooth' });
+        }
+    })
+    // applay the active class to the section when the user scrolls
+
+window.onscroll = function() {
+    document.querySelectorAll('section').forEach(item => {
+        if (item.getBoundingClientRect().top >= -400 && item.getBoundingClientRect().top <= 150) {
+            item.classList.add('your-active-class');
+        } else {
+            item.classList.remove('your-active-class');
+
+        }
+    })
+}
+
+// scroll top btn 
 upBtn = document.getElementById("upBtn");
 window.onscroll = function() { scrollFunction() };
 
 function scrollFunction() {
-    if (document.body.scrollTop > 40) {
+    if (document.body.scrollTop > 50) {
         upBtn.style.opacity = 1;
     } else {
         upBtn.style.opacity = 0;
@@ -86,31 +61,3 @@ function topFunction() {
         behavior: 'smooth'
     });
 }
-window.onscroll = function() {
-        document.querySelectorAll('section').forEach(item => {
-            if (item.getBoundingClientRect().top >= -400 && item.getBoundingClientRect().top <= 150) {
-                item.classList.add('your-active-class');
-            } else {
-                item.classList.remove('your-active-class');
-
-            }
-        })
-    }
-    // Add class 'active' to section when near top of viewport
-
-
-// Scroll to anchor ID using scrollTO event
-
-
-/**
- * End Main Functions
- * Begin Events
- * 
- */
-
-// Build menu 
-
-// Scroll to section on link click
-// select the ul 
-
-// Set sections as active
