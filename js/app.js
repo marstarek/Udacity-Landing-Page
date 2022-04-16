@@ -62,9 +62,13 @@ let navUl = document.getElementById('navbar__list');
 let allSections = document.querySelectorAll('section');
 let sections = Array.from(allSections);
 console.log(sections);
+// loop through allsections to  add li to navUl
 const createNavLi = () => {
-        sections.forEach(element => {
-            third
-        });
-    }
+    sections.forEach(sec => {
+        li = document.createElement('li');
+        li.innerHTML = `<a href="#${sec.id}" class="menu__link" data-nav="${sec.id}" >${sec.dataset.nav}</a>`;
+        navUl.appendChild(li);
+    });
+}
+createNavLi()
     // Set sections as active
