@@ -24,24 +24,13 @@ navbar.forEach((item) => {
     });
 });
 navUl.addEventListener("click", (e) => {
-        e.preventDefault()
-        if (e.target.dataset.navbar) {
-            document.getElementById(`${e.target.dataset.navbar}`)
-                .scrollIntoView({ behavior: 'smooth' });
-        }
-    })
-    // applay the active class to the section when the user scrolls
+    e.preventDefault()
+    if (e.target.dataset.navbar) {
+        document.getElementById(`${e.target.dataset.navbar}`)
+            .scrollIntoView({ behavior: 'smooth' });
+    }
+})
 
-window.onscroll = function() {
-    document.querySelectorAll('section').forEach(item => {
-        if (item.getBoundingClientRect().top >= -400 && item.getBoundingClientRect().top <= 150) {
-            item.classList.add('your-active-class');
-        } else {
-            item.classList.remove('your-active-class');
-
-        }
-    })
-}
 
 // scroll top btn 
 upBtn = document.getElementById("upBtn");
@@ -60,4 +49,16 @@ function topFunction() {
         top: 0,
         behavior: 'smooth'
     });
+}
+// applay the active class to the section when the user scrolls
+
+window.onscroll = function() {
+    document.querySelectorAll('section').forEach(item => {
+        if (item.getBoundingClientRect().top >= -400 && item.getBoundingClientRect().top <= 150) {
+            item.classList.add('your-active-class');
+        } else {
+            item.classList.remove('your-active-class');
+
+        }
+    })
 }
