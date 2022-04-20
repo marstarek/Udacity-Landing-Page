@@ -3,16 +3,14 @@ let navUl = document.getElementById('navbar__list');
 // get all sections 
 let allSections = document.querySelectorAll('section');
 let sections = Array.from(allSections);
-console.log(sections);
 // loop through allsections to  add li to navUl
-const createNavLi = () => {
+(function() {
     sections.forEach(sec => {
         li = document.createElement('li');
         li.innerHTML = `<a href="#${sec.id}" class="menu__link " data-navbar="${sec.id}" >${sec.dataset.nav}</a>`;
         navUl.appendChild(li);
-    });
-}
-createNavLi();
+    }); // I will invoke myself
+})();
 // add clicked class to navbar items 
 let navbar = document.querySelectorAll('a');
 navbar.forEach((item) => {
@@ -33,16 +31,24 @@ navUl.addEventListener("click", (e) => {
 
 
 // scroll top btn 
-upBtn = document.getElementById("upBtn");
-window.onscroll = function() { scrollFunction() };
+// upBtn = document.getElementById("upBtn");
+// window.onscroll =
 
-function scrollFunction() {
-    if (document.body.scrollTop > 50) {
-        upBtn.style.opacity = 1;
-    } else {
-        upBtn.style.opacity = 0;
-    }
-}
+//     scrollFunction();
+
+
+// function scrollFunction() {
+//     console.log(document.body.scroll);
+//     if (document.body.scrollTop > 50) {
+//         upBtn.style.opacity = 1;
+//         console.log("upBtn.style.opacity");
+//     } else {
+//         upBtn.style.opacity = 0;
+//         console.log("upBtn.style.opacity");
+
+//     }
+// }
+
 
 function topFunction() {
     window.scrollTo({

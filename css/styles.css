@@ -108,7 +108,7 @@ section {
     bottom: 30px;
     cursor: pointer;
     transform: scale(1.8);
-    opacity: 0;
+    opacity: 1;
     transition: .3s;
 }
 
