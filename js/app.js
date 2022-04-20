@@ -29,27 +29,6 @@ navUl.addEventListener("click", (e) => {
     }
 })
 
-
-// scroll top btn 
-// upBtn = document.getElementById("upBtn");
-// window.onscroll =
-
-//     scrollFunction();
-
-
-// function scrollFunction() {
-//     console.log(document.body.scroll);
-//     if (document.body.scrollTop > 50) {
-//         upBtn.style.opacity = 1;
-//         console.log("upBtn.style.opacity");
-//     } else {
-//         upBtn.style.opacity = 0;
-//         console.log("upBtn.style.opacity");
-
-//     }
-// }
-
-
 function topFunction() {
     window.scrollTo({
         top: 0,
